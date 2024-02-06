@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-secondary">
+    <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a href="/" class="navbar-brand">Top</a>
+        </li>
+        <li class="nav-item active">
+            <a href="/add" class="nav-link">Add</a>
+        </li>
+        <li class="nav-item active">
+            <a href="/user" class="nav-link">User</a>
+        </li>
+        <li class="nav-item active">
+            <a href="/users/login" class="nav-link">login</a>
+        </li>
+        <li class="nav-item actiev">
+            <a href="/users/logout" class="nav-link">logout</a>
+        </li>
+        <% if (login != undefined && login.role == 'admin'){ %>
+            <li class="nav-item active">
+                <a href="/users/admin" class="nav-link">admin</a>
+            </li>
+            <li class="nav-item active">
+                <a href="/users/admin2" class="nav-link">admin2</a>
+            </li>
+        <% } %>
+    </ul>
+</nav>
+<p class="text-right">
+    <%= login != undefined ? '"' + login.name + '" logined.' : '(not logined)' %>
+</p>
