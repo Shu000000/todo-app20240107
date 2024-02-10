@@ -6,6 +6,9 @@ exports.getPg = function(){
     const client = new Client({
         connectionString: process.env.POSTGRES_URL,
     });
+    const query = {
+        text: "SELECT * FROM users",
+      };
     client.connect()
     .then(() => console.log("接続完了"))
     .then(() => client.query(query))

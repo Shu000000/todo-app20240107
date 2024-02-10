@@ -9,7 +9,6 @@ var dbpg = require('../db/pg.js');
 //User Home
 router.get('/', async function(req, res, next){
   console.log('ここを通過'+req.session.login);
-  console.log(req.session.login == undefined);
   if (req.session.login == undefined){
     res.redirect('/users/login');
     console.log('リダイレクトします。');
